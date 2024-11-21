@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Manage persons</title>
 </head>
 <body>
 <h1>Manage persons</h1>
+<table>
+    <thead>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>e-mail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="person: ${personsList}">
+        <tr>
+            <td th:text="${person.firstName}">John</td>
+            <td th:text="${person.lastName}">Lennon</td>
+            <td th:text="${person.email}">jl@beatles.com</td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
 </body>
 </html>
