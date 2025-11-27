@@ -11,4 +11,9 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/persons")
+    public String showPersons() {
+        return "persons";
+    }
+
 }
