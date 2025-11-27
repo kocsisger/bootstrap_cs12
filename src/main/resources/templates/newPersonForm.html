@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet"
+        type="text/css"
+        th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add new person</h1>
+<form method="post" th:object="${newPerson}" th:action="@{/persons/save}">
+  <div class="mb-3">
+    <label for="exampleInputFirstName" class="form-label">First name</label>
+    <input type="text" class="form-control" id="exampleInputFirstName"
+    th:field="*{firstName}" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputLastName" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="exampleInputLastName"
+    th:field="*{lastName}" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    th:field="*{email}" />
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1"
+    th:field="*{password}" />
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1"
+    th:field="*{enabled}" />
+    <label class="form-check-label" for="exampleCheck1">Enabled</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
