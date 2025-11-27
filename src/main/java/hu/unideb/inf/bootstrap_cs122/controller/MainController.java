@@ -28,6 +28,15 @@ public class MainController {
     @GetMapping("/persons/new")
     public String newPerson(Model model) {
         model.addAttribute("newPerson", new Person());
+        model.addAttribute("pageTitle", "Add New Person");
+        return "newPersonForm";
+    }
+
+    @GetMapping("/persons/update/{id}")
+    public String updatePerson(Model model, @PathVariable int id) {
+        model.addAttribute("newPerson",
+                personRepository.findById(id).get());
+        model.addAttribute("pageTitle", "Update Person");
         return "newPersonForm";
     }
 

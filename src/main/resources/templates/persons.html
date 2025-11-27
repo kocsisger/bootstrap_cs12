@@ -11,7 +11,7 @@
 <h1>Manage persons</h1>
 <a th:href="@{/persons/new}">Add new person</a>
 <table class="table">
-  <thead>
+  <thead class="table-danger">
   <tr>
     <th scope="col">First name</th>
     <th scope="col">Last name</th>
@@ -29,7 +29,7 @@
       <td th:text="${person.password}"/>
       <td>
         <a th:href="@{'/persons/delete/' + ${person.id}}">Delete</a>
-        Update
+        <a th:href="@{'/persons/update/' + ${person.id}}">Update</a>
       </td>
     </tr>
   </th:block>

@@ -8,8 +8,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Add new person</h1>
+<h1>  [[ ${pageTitle} ]]  </h1>
 <form method="post" th:object="${newPerson}" th:action="@{/persons/save}">
+  <input type="hidden" th:field="*{id}" />
   <div class="mb-3">
     <label for="exampleInputFirstName" class="form-label">First name</label>
     <input type="text" class="form-control" id="exampleInputFirstName"
